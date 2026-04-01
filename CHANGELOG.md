@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.1] - 2026-04-01
+
+### Fixed
+- Revert nested `skills/metrikia/` directory — Claude Code resolves namespace from plugin.json `name`, not directory structure
+- Skills now correctly register as `/metrikia:weekly-report` instead of `/weekly-report (metrikia)`
+
 ## [1.2.0] - 2026-04-01
 
 ### Changed
