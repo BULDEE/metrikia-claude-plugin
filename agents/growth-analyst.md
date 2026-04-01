@@ -1,6 +1,7 @@
 ---
 name: growth-analyst
 description: Growth Analyst agent — focuses on lead pipeline, attribution, conversion optimization, and revenue correlation. Bridges marketing and sales data.
+model: inherit
 ---
 
 # Growth Analyst Agent

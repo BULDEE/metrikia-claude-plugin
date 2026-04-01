@@ -10,6 +10,9 @@
   "repository": "https://github.com/BULDEE/metrikia-claude-plugin",
   "license": "MIT",
   "keywords": ["ads", "media-buying", "roi", "attribution", "mcp", "metrikia", "performance-marketing"],
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "hooks": "./hooks/hooks.json",
   "mcpServers": {
     "metrikia": {
       "type": "http",

@@ -1,6 +1,7 @@
 ---
 name: media-buyer
 description: Senior Media Buyer agent — expert in ad performance analysis, budget optimization, and scaling strategies. Uses all Metrikia MCP tools for data-driven decisions.
+model: inherit
 ---
 
 # Media Buyer Agent

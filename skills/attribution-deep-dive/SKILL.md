@@ -37,3 +37,30 @@ Channels that get little last-click credit but contribute heavily to assists
 
 ### Optimization Opportunities
 Specific actions to improve the conversion path
+
+## Process Flow
+
+```dot
+digraph attribution_deep_dive {
+    rankdir=TB;
+    "Fetch converted leads" -> "Fetch won deals";
+    "Fetch won deals" -> "Map 5-10 journeys";
+    "Map 5-10 journeys" -> "Identify patterns";
+    "Identify patterns" -> "Get budget advice (MTA)";
+    "Get budget advice (MTA)" -> "Ask Diana undervalued channels";
+    "Ask Diana undervalued channels" -> "Compile attribution report";
+}
+```
+
+## Red Flags
+- Channel shows 0% last-touch but >15% assist → severely undervalued, investigate
+- Average journey >7 touchpoints → long consideration cycle, adjust attribution window
+- Single-touch conversions dominating → either tracking gap or very direct funnel
+- Large gap between platform-reported and MTA conversions → deduplication needed
+
+## Error Handling
+
+- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) → Wait 60 seconds, reduce batch sizes
+- If empty results → Verify date range and check if data sources are synced via `get_sync_status`

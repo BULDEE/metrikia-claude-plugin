@@ -36,3 +36,30 @@ Which platform's creatives perform best and why
 
 ### Scaling Recommendations
 Specific creatives to increase budget on, with suggested amounts
+
+## Process Flow
+
+```dot
+digraph creative_analysis {
+    rankdir=TB;
+    "Fetch top 50 creatives by ROAS" -> "Fetch by spend";
+    "Fetch by spend" -> "Cross-reference efficiency";
+    "Cross-reference efficiency" -> "Compare periods for trends";
+    "Compare periods for trends" -> "Ask Diana about fatigue";
+    "Ask Diana about fatigue" -> "Classify into tiers";
+    "Classify into tiers" -> "Compile creative report";
+}
+```
+
+## Red Flags
+- CTR declining over 3+ weeks → creative fatigue confirmed
+- High impression count + stable CTR but declining conversions → audience saturation
+- New creative outperforming by >3x → test at larger scale before declaring winner
+- All "Kill" tier creatives from same platform → platform issue, not creative issue
+
+## Error Handling
+
+- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) → Wait 60 seconds, reduce batch sizes
+- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
