@@ -6,7 +6,7 @@
     "name": "Metrikia",
     "email": "support@metrikia.io"
   },
-  "homepage": "https://github.com/BULDEE/metrikia-claude-plugin",
+  "homepage": "https://metrikia.io/integrations/ai",
   "repository": "https://github.com/BULDEE/metrikia-claude-plugin",
   "license": "MIT",
   "keywords": ["ads", "media-buying", "roi", "attribution", "mcp", "metrikia", "performance-marketing"],
@@ -21,16 +21,12 @@
   },
   "userConfig": {
     "default_period": {
-      "type": "select",
-      "label": "Default analysis period",
-      "options": ["7d", "30d", "90d"],
-      "default": "30d"
+      "description": "Default analysis period: 7d, 30d, or 90d (default: 30d)",
+      "sensitive": false
     },
     "language": {
-      "type": "select",
-      "label": "Report language",
-      "options": ["en", "fr"],
-      "default": "en"
+      "description": "Report language: en or fr (default: en)",
+      "sensitive": false
     }
   }
 }
