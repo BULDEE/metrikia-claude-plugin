@@ -1,5 +1,4 @@
 ---
-name: lead-pipeline
 description: Analyze the CRM lead pipeline — conversion rates, source attribution, deal velocity, and lead quality assessment
 ---
 
@@ -56,14 +55,14 @@ digraph lead_pipeline {
 ```
 
 ## Red Flags
-- High lead volume + low qualification rate → targeting too broad
-- Qualified leads not converting to deals → sales process issue, not marketing
-- One source dominating pipeline → diversification risk
-- Long time in "contacted" status → sales capacity bottleneck
+- High lead volume + low qualification rate -> targeting too broad
+- Qualified leads not converting to deals -> sales process issue, not marketing
+- One source dominating pipeline -> diversification risk
+- Long time in "contacted" status -> sales capacity bottleneck
 
 ## Error Handling
 
-- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
-- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
-- If rate limited (429) → Wait 60 seconds, reduce batch sizes
-- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
+- If MCP server returns connection error -> Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" -> API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) -> Wait 60 seconds, reduce batch sizes
+- If empty results -> Verify date range and check if data sources are synced via `get_sync_status`

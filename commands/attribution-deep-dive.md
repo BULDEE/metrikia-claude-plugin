@@ -1,5 +1,4 @@
 ---
-name: attribution-deep-dive
 description: Deep analysis of multi-touch attribution — customer journeys, channel contribution, and conversion path optimization
 ---
 
@@ -53,14 +52,14 @@ digraph attribution_deep_dive {
 ```
 
 ## Red Flags
-- Channel shows 0% last-touch but >15% assist → severely undervalued, investigate
-- Average journey >7 touchpoints → long consideration cycle, adjust attribution window
-- Single-touch conversions dominating → either tracking gap or very direct funnel
-- Large gap between platform-reported and MTA conversions → deduplication needed
+- Channel shows 0% last-touch but >15% assist -> severely undervalued, investigate
+- Average journey >7 touchpoints -> long consideration cycle, adjust attribution window
+- Single-touch conversions dominating -> either tracking gap or very direct funnel
+- Large gap between platform-reported and MTA conversions -> deduplication needed
 
 ## Error Handling
 
-- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
-- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
-- If rate limited (429) → Wait 60 seconds, reduce batch sizes
-- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
+- If MCP server returns connection error -> Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" -> API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) -> Wait 60 seconds, reduce batch sizes
+- If empty results -> Verify date range and check if data sources are synced via `get_sync_status`

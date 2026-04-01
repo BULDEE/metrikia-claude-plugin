@@ -1,5 +1,4 @@
 ---
-name: weekly-report
 description: Generate a comprehensive weekly ad performance report with MER, ROAS, top campaigns, anomalies, and Diana AI recommendations
 ---
 
@@ -64,14 +63,14 @@ digraph weekly_report {
 ```
 
 ## Red Flags
-- MER dropping >20% week-over-week → investigate immediately
-- Spend anomaly with no revenue change → possible tracking issue, check `get_sync_status`
-- All creatives declining → likely audience fatigue, not individual creative issue
-- Revenue up but ROAS down → scaling too aggressively, check CPL trends
+- MER dropping >20% week-over-week -> investigate immediately
+- Spend anomaly with no revenue change -> possible tracking issue, check `get_sync_status`
+- All creatives declining -> likely audience fatigue, not individual creative issue
+- Revenue up but ROAS down -> scaling too aggressively, check CPL trends
 
 ## Error Handling
 
-- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
-- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
-- If rate limited (429) → Wait 60 seconds, reduce batch sizes
-- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
+- If MCP server returns connection error -> Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" -> API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) -> Wait 60 seconds, reduce batch sizes
+- If empty results -> Verify date range and check if data sources are synced via `get_sync_status`

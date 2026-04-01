@@ -1,5 +1,4 @@
 ---
-name: creative-analysis
 description: Analyze creative performance across all platforms — identify winners, losers, fatigue signals, and scaling opportunities
 ---
 
@@ -52,14 +51,14 @@ digraph creative_analysis {
 ```
 
 ## Red Flags
-- CTR declining over 3+ weeks → creative fatigue confirmed
-- High impression count + stable CTR but declining conversions → audience saturation
-- New creative outperforming by >3x → test at larger scale before declaring winner
-- All "Kill" tier creatives from same platform → platform issue, not creative issue
+- CTR declining over 3+ weeks -> creative fatigue confirmed
+- High impression count + stable CTR but declining conversions -> audience saturation
+- New creative outperforming by >3x -> test at larger scale before declaring winner
+- All "Kill" tier creatives from same platform -> platform issue, not creative issue
 
 ## Error Handling
 
-- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
-- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
-- If rate limited (429) → Wait 60 seconds, reduce batch sizes
-- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
+- If MCP server returns connection error -> Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" -> API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) -> Wait 60 seconds, reduce batch sizes
+- If empty results -> Verify date range and check if data sources are synced via `get_sync_status`

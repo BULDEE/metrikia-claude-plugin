@@ -1,5 +1,4 @@
 ---
-name: campaign-audit
 description: Deep audit of a specific campaign — performance metrics, creative breakdown, attribution journey, and optimization recommendations
 ---
 
@@ -59,14 +58,14 @@ digraph campaign_audit {
 ```
 
 ## Red Flags
-- High CTR + low conversion → landing page issue, not ad issue
-- High spend creative with no leads → check tracking pixel, not the creative
-- ROAS good but CRM ROAS bad → lead quality problem, tighten targeting
-- Single creative >60% of campaign spend → concentration risk
+- High CTR + low conversion -> landing page issue, not ad issue
+- High spend creative with no leads -> check tracking pixel, not the creative
+- ROAS good but CRM ROAS bad -> lead quality problem, tighten targeting
+- Single creative >60% of campaign spend -> concentration risk
 
 ## Error Handling
 
-- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
-- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
-- If rate limited (429) → Wait 60 seconds, reduce batch sizes
-- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
+- If MCP server returns connection error -> Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" -> API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) -> Wait 60 seconds, reduce batch sizes
+- If empty results -> Verify date range and check if data sources are synced via `get_sync_status`

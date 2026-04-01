@@ -1,5 +1,4 @@
 ---
-name: budget-optimizer
 description: Optimize ad budget allocation across platforms and campaigns using MTA attribution data and Diana AI recommendations
 ---
 
@@ -51,14 +50,14 @@ digraph budget_optimizer {
 ```
 
 ## Red Flags
-- Reallocating >30% of budget at once → too risky, do 10-15% increments
-- Budget advice conflicts with anomaly data → resolve anomalies first
-- Platform with no attribution data → don't cut budget, fix tracking first
-- Highest ROAS campaign at max spend → look for diminishing returns signal
+- Reallocating >30% of budget at once -> too risky, do 10-15% increments
+- Budget advice conflicts with anomaly data -> resolve anomalies first
+- Platform with no attribution data -> don't cut budget, fix tracking first
+- Highest ROAS campaign at max spend -> look for diminishing returns signal
 
 ## Error Handling
 
-- If MCP server returns connection error → Check that `METRIKIA_API_KEY` is set and valid
-- If "tenant not found" → API key may have wrong scope. Need `mcp:read` minimum
-- If rate limited (429) → Wait 60 seconds, reduce batch sizes
-- If empty results → Verify date range and check if data sources are synced via `get_sync_status`
+- If MCP server returns connection error -> Check that `METRIKIA_API_KEY` is set and valid
+- If "tenant not found" -> API key may have wrong scope. Need `mcp:read` minimum
+- If rate limited (429) -> Wait 60 seconds, reduce batch sizes
+- If empty results -> Verify date range and check if data sources are synced via `get_sync_status`
