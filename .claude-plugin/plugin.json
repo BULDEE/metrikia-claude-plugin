@@ -21,11 +21,15 @@
   },
   "userConfig": {
     "default_period": {
-      "description": "Default analysis period: 7d, 30d, or 90d (default: 30d)",
+      "type": "string",
+      "title": "Default analysis period",
+      "description": "7d, 30d, or 90d (default: 30d)",
       "sensitive": false
     },
     "language": {
-      "description": "Report language: en or fr (default: en)",
+      "type": "string",
+      "title": "Report language",
+      "description": "en or fr (default: en)",
       "sensitive": false
     }
   }
