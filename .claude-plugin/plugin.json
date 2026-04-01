@@ -15,7 +15,7 @@
       "type": "http",
       "url": "https://mcp.metrikia.io/api/v1/mcp",
       "headers": {
-        "Authorization": "Bearer ${METRIKIA_API_KEY}"
+        "X-API-Key": "${METRIKIA_API_KEY}"
       }
     }
   },

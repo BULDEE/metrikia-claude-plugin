@@ -26,7 +26,7 @@ The Metrikia plugin connects Claude Code (and Cursor) to Metrikia's MCP server, 
         v                           v
 +--------------------------------------------------+
 |  MCP Tool Calls (JSON-RPC over HTTP)             |
-|  Authorization: Bearer ${METRIKIA_API_KEY}       |
+|  X-API-Key: ${METRIKIA_API_KEY}       |
 +--------------------------------------------------+
         |
         | HTTPS
@@ -118,7 +118,7 @@ The plugin registers the Metrikia MCP server declaratively in `plugin.json`:
       "type": "http",
       "url": "https://mcp.metrikia.io/api/v1/mcp",
       "headers": {
-        "Authorization": "Bearer ${METRIKIA_API_KEY}"
+        "X-API-Key": "${METRIKIA_API_KEY}"
       }
     }
   }

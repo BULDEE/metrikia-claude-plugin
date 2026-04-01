@@ -44,7 +44,7 @@ fi
 
 # 3. Check MCP server connectivity
 HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" --max-time 3 \
-  -H "Authorization: Bearer ${METRIKIA_API_KEY}" \
+  -H "X-API-Key: ${METRIKIA_API_KEY}" \
   "https://mcp.metrikia.io/api/v1/mcp" 2>/dev/null) || HTTP_STATUS="000"
 
 case "$HTTP_STATUS" in

@@ -20,15 +20,14 @@ The MCP server accepts the API key via two headers (either is valid):
 
 | Header | Format |
 |--------|--------|
-| `Authorization` | `Bearer mk_live_xxx` |
 | `X-API-Key` | `mk_live_xxx` |
 
-The plugin uses the `Authorization: Bearer` format by default, resolved from the `METRIKIA_API_KEY` environment variable:
+The plugin uses the `X-API-Key` header, resolved from the `METRIKIA_API_KEY` environment variable:
 
 ```json
 {
   "headers": {
-    "Authorization": "Bearer ${METRIKIA_API_KEY}"
+    "X-API-Key": "${METRIKIA_API_KEY}"
   }
 }
 ```
