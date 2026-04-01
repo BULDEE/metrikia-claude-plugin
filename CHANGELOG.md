@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0] - 2026-04-01
+
+### Changed
+- Skills restructured under `skills/metrikia/` namespace directory for proper `/metrikia:*` prefixing in Claude Code
+- Skills now register as `/metrikia:weekly-report`, `/metrikia:campaign-audit`, etc. instead of `/weekly-report (metrikia)`
+
+### Fixed
+- Skill namespace alignment with Claude Code plugin convention (matching ai-craftsman-superpowers pattern)
+
 ## [1.1.0] - 2026-04-01
 
 ### Added
