@@ -17,7 +17,7 @@ Metrikia est une plateforme SaaS qui correle les investissements publicitaires (
 - Diana AI — assistante IA strategique integree
 - Observabilite temps reel des campagnes
 
-Documentation publique du MCP Server : https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/+MCP-Server
+Documentation publique du MCP Server : https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/MCP-Server
 
 ### Positionnement AI-First
 
@@ -43,7 +43,7 @@ Le message cle : "Tes donnees pub, accessibles par l'IA. Sans quitter ton workfl
 - Titre : accroche AI-First (ex: "Tes donnees pub. L'IA comme interface.")
 - Sous-titre : explication en 1 phrase du MCP server + plugin
 - CTA principal : "Installer le plugin Claude Code" (lien vers le repo GitHub)
-- CTA secondaire : "Voir la documentation MCP" (lien : https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/+MCP-Server)
+- CTA secondaire : "Voir la documentation MCP" (lien : https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/MCP-Server)
 - Visual : illustration ou schema montrant Claude Code <-> MCP Server <-> Metrikia Data
 
 #### Section "Pourquoi AI-First ?"
@@ -79,7 +79,7 @@ Presenter les 4 categories d'outils avec icones :
 **Operations** (4 outils)
 - `create_lead`, `transition_lead`, `create_deal`, `trigger_sync`
 
-Pour le detail technique complet de chaque outil, renvoyer vers : https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/+MCP-Server
+Pour le detail technique complet de chaque outil, renvoyer vers : https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/MCP-Server
 
 #### Section "Plugin Claude Code"
 Presenter les 6 skills comme des workflows pre-construits :
@@ -130,7 +130,7 @@ Lien vers la generation de cle API : `https://app.metrikia.io/app/settings?group
 CTA : "Creer ma cle API" + "Voir la documentation MCP complete"
 
 #### Footer Section
-- Lien vers la doc MCP : `https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/+MCP-Server`
+- Lien vers la doc MCP : `https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/MCP-Server`
 - Lien vers la doc API complete : `https://api.metrikia.io/public/api/v1/docs?ui=redoc`
 - Lien vers le repo plugin : `https://github.com/BULDEE/metrikia-claude-plugin`
 - Lien vers le support : `support@metrikia.io`

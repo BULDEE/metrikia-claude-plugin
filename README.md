@@ -115,7 +115,7 @@ The plugin prompts for these options when enabled:
 ## Support
 
 - [Metrikia AI Integration](https://metrikia.io/integrations/ai)
-- [MCP Server Documentation](https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/+MCP-Server)
+- [MCP Server Documentation](https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/MCP-Server)
 - [API Documentation](https://api.metrikia.io/public/api/v1/docs?ui=redoc)
 - [Support](mailto:support@metrikia.io)
 - [GitHub Issues](https://github.com/BULDEE/metrikia-claude-plugin/issues)
