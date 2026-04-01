@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
+
+if [ -z "${CLAUDE_PLUGIN_ROOT:-}" ]; then
+  echo "> **Warning:** CLAUDE_PLUGIN_ROOT is not set. Metrikia health check cannot run."
+  exit 0
+fi
 
 CONTEXT_FILE="${CLAUDE_PLUGIN_ROOT}/hooks/session-context.md"
+
+if [ ! -r "$CONTEXT_FILE" ]; then
+  echo "> **Warning:** Metrikia session-context.md is missing. Plugin may be misconfigured."
+  exit 0
+fi
 
 # 1. Check METRIKIA_API_KEY is set
 if [ -z "${METRIKIA_API_KEY:-}" ]; then
