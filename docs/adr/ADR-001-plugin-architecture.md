@@ -63,7 +63,7 @@ A plugin that:
 4. Injects session context via a hook so Claude always knows what tools are available.
 
 **Pros:**
-- One-command install: `claude plugins add metrikia-plugin`.
+- Simple install: `claude --plugin-dir ./metrikia-claude-plugin` (marketplace: `claude plugin install metrikia` when available).
 - Skills provide guided workflows without code. Claude follows the markdown instructions, making tool calls in the right order, handling errors, and synthesizing results.
 - Agent personas bring domain expertise. A "Media Buyer" agent thinks in ROAS, CPL, and scaling strategies -- not generic AI responses.
 - Session hook ensures Claude always knows about Metrikia's capabilities, even in a new conversation.
