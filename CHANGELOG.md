@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0] - 2026-04-01
+
+### Added
+- MCP health check at SessionStart (validates API key + server connectivity)
+- Defensive guards in health check (CLAUDE_PLUGIN_ROOT, session-context.md existence)
+
+### Fixed
+- `userConfig` aligned with official Claude Code plugin schema (`type`/`title`/`description`/`sensitive`)
+- Agent frontmatter: removed undocumented `model: inherit`
+- `homepage` updated to `https://metrikia.io/integrations/ai`
+
+### Changed
+- README rewritten: local-first installation, correct CLI commands (`claude --plugin-dir`), health check section
+- Installation docs now distinguish local install (current) from marketplace (coming soon)
+
+### Removed
+- `marketplace.json` (not needed for official marketplace submission)
+
 ## [1.0.0] - 2026-04-01
 
 ### Added
