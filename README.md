@@ -8,13 +8,15 @@ Metrikia is a SaaS platform that correlates ad investments (Meta, Google, TikTok
 
 ## Installation
 
-### 1. Install the plugin
+### Local Installation
+
+#### 1. Clone the repository
 
 ```bash
-claude plugins add metrikia-plugin
+git clone https://github.com/BULDEE/metrikia-claude-plugin.git
 ```
 
-### 2. Set your API key
+#### 2. Set your API key
 
 Generate an API key in [Metrikia Settings -> API Keys](https://app.metrikia.io/app/settings?group=advanced&section=api-webhooks) with `mcp:read` scope.
 
@@ -24,17 +26,30 @@ export METRIKIA_API_KEY="mk_live_your_key_here"
 
 Or add to your shell profile (`~/.zshrc` / `~/.bashrc`).
 
-### 3. Restart Claude Code
+#### 3. Launch Claude Code with the plugin
 
-The Metrikia MCP server and all skills will be available immediately.
+```bash
+claude --plugin-dir ./metrikia-claude-plugin
+```
 
-### Quick Verification
+The plugin runs an automatic health check at startup. If you see **"Metrikia Plugin Active"**, everything is connected.
 
-Ask Claude:
+### Marketplace (coming soon)
 
-> "Use metrikia to show my campaign performance for the last 7 days"
+> The plugin is not yet available on the official Claude Code marketplace. When published:
+>
+> ```bash
+> claude plugin install metrikia
+> ```
 
-If you see real campaign data, the plugin is working correctly.
+## Health Check
+
+At every session start, the plugin automatically verifies:
+
+1. `METRIKIA_API_KEY` is set
+2. The MCP server at `mcp.metrikia.io` is reachable and the key is valid
+
+If something is wrong, you get a clear error message with instructions to fix it — no silent failures.
 
 ## What's Inside
 
@@ -83,21 +98,24 @@ Skills chain together for comprehensive analysis:
 
 ## Configuration
 
-The plugin supports user-configurable options in `plugin.json`:
+The plugin prompts for these options when enabled:
 
-| Option | Values | Default | Description |
-|--------|--------|---------|-------------|
-| `default_period` | `7d`, `30d`, `90d` | `30d` | Default time window for analysis |
-| `language` | `en`, `fr` | `en` | Report output language |
+| Option | Description |
+|--------|-------------|
+| `default_period` | Default analysis period: 7d, 30d, or 90d (default: 30d) |
+| `language` | Report language: en or fr (default: en) |
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/claude-code) installed
+- [Claude Code](https://claude.ai/claude-code) 1.0.33 or later
 - Metrikia account with API key (`mcp:read` scope minimum)
 - `METRIKIA_API_KEY` environment variable set
+- `curl` (for automatic health check at startup)
 
 ## Support
 
-- [Metrikia Documentation](https://api.metrikia.io/public/api/v1/docs?ui=redoc)
+- [Metrikia AI Integration](https://metrikia.io/integrations/ai)
+- [MCP Server Documentation](https://api.metrikia.io/public/api/v1/docs?ui=redoc#section/+MCP-Server)
+- [API Documentation](https://api.metrikia.io/public/api/v1/docs?ui=redoc)
 - [Support](mailto:support@metrikia.io)
 - [GitHub Issues](https://github.com/BULDEE/metrikia-claude-plugin/issues)
