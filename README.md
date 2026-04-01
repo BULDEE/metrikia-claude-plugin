@@ -8,35 +8,53 @@ Metrikia is a SaaS platform that correlates ad investments (Meta, Google, TikTok
 
 ## Installation
 
-### Local Installation
-
-#### 1. Clone the repository
+### From GitHub (recommended)
 
 ```bash
-git clone https://github.com/BULDEE/metrikia-claude-plugin.git
-```
-
-#### 2. Set your API key
-
-Generate an API key in [Metrikia Settings -> API Keys](https://app.metrikia.io/app/settings?group=advanced&section=api-webhooks) with `mcp:read` scope.
-
-```bash
+# Step 1: Set your API key
 export METRIKIA_API_KEY="mk_live_your_key_here"
 ```
 
-Or add to your shell profile (`~/.zshrc` / `~/.bashrc`).
+Generate an API key in [Metrikia Settings -> API Keys](https://app.metrikia.io/app/settings?group=advanced&section=api-webhooks) with `mcp:read` scope. Add it to your shell profile (`~/.zshrc` / `~/.bashrc`).
 
-#### 3. Launch Claude Code with the plugin
+Then in Claude Code:
 
 ```bash
-claude --plugin-dir ./metrikia-claude-plugin
+# Step 2: Add the marketplace
+/plugin marketplace add BULDEE/metrikia-claude-plugin
+
+# Step 3: Install the plugin
+/plugin install metrikia@BULDEE-metrikia-claude-plugin
+
+# Step 4: Restart Claude Code
+exit
+claude
+```
+
+### From Local Path
+
+```bash
+# If you cloned the repo locally
+git clone https://github.com/BULDEE/metrikia-claude-plugin.git
+/plugin marketplace add /path/to/metrikia-claude-plugin
+/plugin install metrikia@metrikia-plugin
+```
+
+### Verify Installation
+
+```bash
+# Open plugin manager
+/plugin
+
+# Go to "Installed" tab to see metrikia plugin
+# Go to "Errors" tab if skills don't appear
 ```
 
 The plugin runs an automatic health check at startup. If you see **"Metrikia Plugin Active"**, everything is connected.
 
-### Marketplace (coming soon)
+### Official Marketplace (coming soon)
 
-> The plugin is not yet available on the official Claude Code marketplace. When published:
+> When published to the official Claude Code marketplace:
 >
 > ```bash
 > claude plugin install metrikia
